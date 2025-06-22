@@ -23,5 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-#hidden secrets
-.env
+**/.env
+
