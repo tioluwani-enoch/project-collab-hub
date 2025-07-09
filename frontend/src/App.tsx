@@ -5,10 +5,12 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import SignUp from "./pages/SignUp";
-import ViewPost from "./pages/ViewPost";
-import AllPosts from "./pages/AllPosts";
+// import Projects from "./pages/Projects";
 import Error404 from "./pages/Error404";
-import AddPosts from "./pages/AddPosts";
+import AddProject from "./pages/AddProject";
+import Layout from "./components/Layout";
+import ProtectedRoute from "./components/ProtectedRoute";
+import ViewProjects from "./pages/ViewProjects";
 
 function App() {
   return (
@@ -18,13 +20,24 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/posts" element={<AllPosts />} />
-          <Route path="/posts/:id" element={<ViewPost />} />
-          <Route path="/add-post" element={<AddPosts />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            {/* <Route
+              path="/projects"
+              element={<ProtectedRoute children={<Projects />} />}
+            /> */}
+            <Route
+              path="/add-post"
+              element={<ProtectedRoute children={<AddProject />} />}
+            />
+            <Route
+              path="/projects"
+              element={<ProtectedRoute children={<ViewProjects />} />}
+            />
+          </Route>
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

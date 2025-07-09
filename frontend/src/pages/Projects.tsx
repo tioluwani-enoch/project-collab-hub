@@ -20,12 +20,14 @@ const posts = [
   },
 ];
 
-export default function AllPosts() {
+export default function Projects() {
   return (
     <div className="min-h-screen bg-gray-50 px-4 py-8">
       <div className="max-w-5xl mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold text-purple-800">All Posts</h1>
+          <h1 className="text-3xl font-bold text-purple-8AllPosts00">
+            All Posts
+          </h1>
           <LinkButton text="Add Post" link="/add-post" />
         </div>
 

@@ -11,7 +11,7 @@ const PostSchema = Yup.object().shape({
     .required("Content is required"),
 });
 
-export default function AddPosts() {
+export default function AddProject() {
   return (
     <div className="min-h-screen bg-gray-50 px-4 py-8">
       <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">

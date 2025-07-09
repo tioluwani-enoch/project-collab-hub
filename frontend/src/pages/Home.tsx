@@ -4,47 +4,6 @@ import Button from "../components/Button"; // adjust path as needed
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-800">
-      {/* Navbar */}
-      <header className="w-full px-6 py-4 shadow-md bg-white fixed top-0 z-10">
-        <nav className="flex justify-between items-center max-w-7xl mx-auto">
-          <Link to="/" className="text-2xl font-bold text-purple-700">
-            CompileKnox
-          </Link>
-          <ul className="flex gap-6 text-sm font-medium">
-            <li>
-              <a href="#" className="hover:text-purple-600">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="hover:text-purple-600">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#features" className="hover:text-purple-600">
-                Features
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-purple-600">
-                Contact
-              </a>
-            </li>
-            <li>
-              <a href="/login" className="hover:text-purple-600">
-                Login
-              </a>
-            </li>
-            <li>
-              <a href="/signup" className="hover:text-purple-600">
-                Sign Up
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-purple-50 to-purple-100">
         <div className="max-w-4xl mx-auto text-center px-6">
@@ -57,7 +16,9 @@ export default function Home() {
             join a team or launch your own, CompileKnox helps you connect.
           </p>
           <div className="flex justify-center">
-            <Button text="Start Collaborating" styling="w-[200px]" />
+            <Link to="/signup">
+              <Button text="Start Collaborating" styling="w-[200px] cursor-pointer" />
+            </Link>
           </div>
         </div>
       </section>
