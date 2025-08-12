@@ -16,10 +16,10 @@ app.use((req, res, next) => {
 app.use("/api/v1/", userRouter);
 
 const PORT = process.env.PORT;
-const blogDB = process.env.USER_DB_URI;
+const userDB = process.env.USER_DB_URI;
 
 mongoose
-  .connect(blogDB!)
+  .connect(userDB!)
   .then(() => console.log("Connected to userDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 

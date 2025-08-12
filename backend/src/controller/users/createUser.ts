@@ -12,7 +12,7 @@ async function hashPassword(password: string) {
 
 // Create a new user
 export async function createUser(req: Request, res: Response): Promise<void> {
-  const { name, username, email, password } = req.body;
+  const { name, username, email, password, description, tags, year } = req.body;
 
   if (!name || !username || !email || !password) {
     res.status(400).json({ message: "Please fill out all fields." });
@@ -39,6 +39,9 @@ export async function createUser(req: Request, res: Response): Promise<void> {
       username,
       email,
       password: hashedPassword,
+      description,
+      tags,
+      year,
     });
 
     await newUser.save();

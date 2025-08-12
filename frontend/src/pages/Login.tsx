@@ -38,15 +38,15 @@ export default function Login() {
         toast.success("Login successful!");
         setTimeout(() => {
           toast.warning("Redirecting to profile...");
-        }, 2000);
+        }, 500);
         setTimeout(() => {
-          navigate("/profile");
-        }, 3000);
+          navigate("/profile/" + values.usernameOrEmail); // Redirect to profile page
+        }, 1000);
       } else if (loginUser.rejected.match(action)) {
         toast.error(action.payload?.message || "Invalid credentials.");
       }
-    } catch (error) {
-      toast.error("An unexpected error occurred.");
+    } catch (error: any) {
+      toast.error("An unexpected error occurred.", error.message);
     } finally {
       setSubmitting(false);
     }
